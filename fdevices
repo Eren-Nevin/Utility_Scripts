@@ -1,0 +1,8 @@
+#! /bin/sh
+if [ "$1" = 'ios' ] ; then
+    flutter devices | awk -F'• ' '/ios/ {print $2}' | sed 's/ //g'
+elif [ "$1" = 'and' ] ; then
+    flutter devices | awk -F'• ' '/android/ {print $2}' | sed 's/ //g'
+else 
+    flutter devices | awk -F'• ' '/•/ {print $2}' | sed 's/ //g'
+fi

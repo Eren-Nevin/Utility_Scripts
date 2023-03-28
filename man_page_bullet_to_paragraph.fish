@@ -1,0 +1,1 @@
+pbpaste | gsed -E 's/^ +/ /g' | python3 -c 'import sys; print(sys.stdin.read(-1).replace("\n",""))' | pbcopy

@@ -1,0 +1,11 @@
+#! /bin/sh
+
+case $1 in
+    all) flutter run -d all ;;
+    ios) flutter run -d $(fdevices ios) ;;
+    and|android) flutter run -d $(fdevices and) ;;
+    mac) flutter run -d 'macos' ;;
+    win) flutter run -d 'windows' ;;
+    *) flutter run -d $1 ;;
+esac
+
